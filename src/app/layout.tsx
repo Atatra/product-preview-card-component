@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Fraunces, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export const metadata: Metadata = {
@@ -17,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${fraunces.variable}`}>{children}</body>
+      <body className={`${montserrat.variable} ${fraunces.variable} bg-cream`}>
+        {children}
+      </body>
     </html>
   );
 }
